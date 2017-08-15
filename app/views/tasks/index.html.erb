@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <% @tasks.each do |task| %>
+      <h2><%= task.name %></h2>
+      <p><%= task.status %></p>
+      <div class="btn btn-primary">
+        <%= link_to "Delete a Task", task_path(task), method: :delete %>
+      </div>
+      <div class="btn btn-primary">
+      <%= link_to "Edit Task", edit_task_path(task) %>
+      </div>
+      <div class="btn btn-primary">
+      <%= link_to "View Task", task_path(task) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= link_to "Add Task", new_task_path %>
+    </div>
+  </div>
+
+</div>
